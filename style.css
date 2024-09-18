@@ -18,13 +18,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
+    width: 100%;
 }
 
 .navbar .logo {
@@ -52,6 +53,37 @@ header {
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.1rem;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    background-color: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-links.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.mobile-active a {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
 }
 
 /* Hero Section */
@@ -167,7 +199,28 @@ footer {
 
 /* Mobile-Specific Styles */
 @media (max-width: 768px) {
-    /* Hero Section on Mobile */
+    header {
+        padding: 1rem 2%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.mobile-active {
+        display: flex;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
@@ -175,7 +228,7 @@ footer {
     }
 
     .hero .content h1 {
-        font-size: 2.2rem; /* Reduced font size for mobile */
+        font-size: 2.2rem;
     }
 
     .hero .content p {
@@ -183,25 +236,13 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    /* Steps Section on Mobile */
     .steps-container {
         flex-direction: column;
-        gap: 1.5rem; /* Reduced gap for mobile */
+        gap: 1.5rem;
     }
 
     .step {
-        width: 100%; /* Full-width for each step on mobile */
-        padding: 1.5rem; /* Adjusted padding for smaller screens */
+        width: 100%;
+        padding: 1.5rem;
     }
-
-    /* Navbar on Mobile */
-    .nav-links {
-        display: none; /* Hide regular nav on small screens */
-    }
-
-    .contact-btn {
-        display: none; /* Hide contact button on mobile */
-    }
-
-    /* Optional: You could implement a hamburger menu here for better mobile UX */
 }
