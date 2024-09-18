@@ -1,0 +1,207 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: white;
+    padding: 1rem 5%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.contact-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 5%;
+    background-color: #ffffff;
+}
+
+.hero .content h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.hero .content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero .btn {
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn.primary {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.btn.secondary {
+    background-color: #fff;
+    border: 2px solid #4a90e2;
+    color: #4a90e2;
+}
+
+.hero .illustration img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* How Does It Work Section */
+.how-it-works {
+    padding: 4rem 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.step {
+    background-color: #f0f4f8;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    margin-bottom: 1rem;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+    /* Hero Section on Mobile */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 3%;
+    }
+
+    .hero .content h1 {
+        font-size: 2.2rem; /* Reduced font size for mobile */
+    }
+
+    .hero .content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Steps Section on Mobile */
+    .steps-container {
+        flex-direction: column;
+        gap: 1.5rem; /* Reduced gap for mobile */
+    }
+
+    .step {
+        width: 100%; /* Full-width for each step on mobile */
+        padding: 1.5rem; /* Adjusted padding for smaller screens */
+    }
+
+    /* Navbar on Mobile */
+    .nav-links {
+        display: none; /* Hide regular nav on small screens */
+    }
+
+    .contact-btn {
+        display: none; /* Hide contact button on mobile */
+    }
+
+    /* Optional: You could implement a hamburger menu here for better mobile UX */
+}
