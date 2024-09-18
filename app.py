@@ -1,25 +1,22 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, send_from_directory
 
-app = Flask(__name__)
-
-# Route for serving CSS files directly from the root directory
-@app.route('/<path:filename>')
-def serve_static(filename):
-    if filename.endswith('.css'):
-        return send_from_directory('.', filename)
-    return send_from_directory('.', filename)
+app = Flask(__name__, static_folder='.')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory('.', 'index.html')
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return send_from_directory('.', 'contact.html')
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return send_from_directory('.', 'about.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('.', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
